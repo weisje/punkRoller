@@ -42,5 +42,9 @@ def infestationRoller():
     pass
 
 
+def csvReader(documentFilePath, hasHeader="True", delmiterCharacter = "|", ) -> list:
+    pass
+
+
 if __name__ == '__main__':
     main()
