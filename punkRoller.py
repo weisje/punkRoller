@@ -3,7 +3,7 @@ import random
 
 
 def main():
-    pass
+    attributeRoller(True)
 
 
 def cashAndGearRoller() -> list:
@@ -23,8 +23,21 @@ def cashAndGearRoller() -> list:
     return startingGear
 
 
-def attributeRoller(preferredStat=False):
-    pass
+def attributeRoller(preferredStat=False, defaultDie=6, defaultRollPool=3) -> int:
+    """
+    Function for providing stats for each roll garnered based on whether the stat is preferred or not.
+    :param preferredStat: Tells if the stat being generated should be rolled with 3d6 (False) or 4d6 drop the lowest (True).
+    :type preferredStat: bool
+    :param defaultDie: The number of faces the die that is rolling for attributes should have
+    :type defaultDie: int
+    :param defaultRollPool: The baseline number of times the default die for attributes should be rolled.
+    :type defaultRollPool: int
+    :return: int
+    """
+    dicePool = [] # Place to store the values that have been rolled.
+
+    for roll in range(defaultRollPool):
+        dicePool.append(random.randint(1, defaultDie))
 
 
 def statsRoller():
