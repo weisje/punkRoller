@@ -44,6 +44,24 @@ def attributeRoller(preferredStat=False, defaultDie=6, defaultRollPool=3) -> int
         dicePool.append(random.randint(1, defaultDie))
         dicePool.remove(min(dicePool))
 
+    match sum(dicePool):
+        case 1 | 2 | 3 | 4:
+            return -3
+        case 5 | 6:
+            return -2
+        case 7 | 8:
+            return -1
+        case 9 | 10 | 11 | 12:
+            return 0
+        case 13 | 14:
+            return 1
+        case 15 | 16:
+            return 2
+        case 17 | 18 | 19 | 20:
+            return 3
+        case _:
+            sys.exit(f"\'{sum(dicePool)}\' is not a valid amount for the attributeRoller().")
+
 
 def statsRoller():
     pass
