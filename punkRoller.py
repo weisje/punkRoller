@@ -1,9 +1,10 @@
 import csv
 import random
+import sys
 
 
 def main():
-    attributeRoller(True)
+    print(attributeRoller())
 
 
 def cashAndGearRoller() -> list:
