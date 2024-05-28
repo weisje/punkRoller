@@ -39,6 +39,10 @@ def attributeRoller(preferredStat=False, defaultDie=6, defaultRollPool=3) -> int
     for roll in range(defaultRollPool):
         dicePool.append(random.randint(1, defaultDie))
 
+    if preferredStat:
+        dicePool.append(random.randint(1, defaultDie))
+        dicePool.remove(min(dicePool))
+
 
 def statsRoller():
     pass
