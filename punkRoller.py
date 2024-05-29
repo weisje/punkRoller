@@ -4,7 +4,7 @@ import sys
 
 
 def main():
-    print(attributeRoller())
+    print(statsRoller())
 
 
 def cashAndGearRoller() -> list:
@@ -40,11 +40,11 @@ def attributeRoller(preferredStat=False, defaultDie=6, defaultRollPool=3) -> int
     for roll in range(defaultRollPool):
         dicePool.append(random.randint(1, defaultDie))
 
-    if preferredStat:
+    if preferredStat: # If the stat is preferred, then add one more die & remove the lowest die from the current pool
         dicePool.append(random.randint(1, defaultDie))
         dicePool.remove(min(dicePool))
 
-    match sum(dicePool):
+    match sum(dicePool): # Add all values of the dice pool & then return a stat based on the values from the core rulebook pg 40.
         case 1 | 2 | 3 | 4:
             return -3
         case 5 | 6:
@@ -63,8 +63,29 @@ def attributeRoller(preferredStat=False, defaultDie=6, defaultRollPool=3) -> int
             sys.exit(f"\'{sum(dicePool)}\' is not a valid amount for the attributeRoller().")
 
 
-def statsRoller():
-    pass
+def statsRoller() -> dict:
+    """
+    Function for rolling all of a character's stats & returning them to the caller.
+    :return: dict
+    """
+    stats = {"Agility": -4, "Knowledge": -4, "Presence": -4, "Strength": -4, "Toughness": -4,} # Stats as per core rulebook pg 40.  Default is set to -4, a value that is not valid via the rulebook, for error catching.
+    preferredStats = []
+    while len(preferredStats) < 2: # Randomly choose two stats to be listed as preferred.
+        currentChoice = (random.choice(list(stats)))
+        if currentChoice not in preferredStats:
+            preferredStats.append(currentChoice)
+
+    for stat in stats: # Roll the character stats with the preferred ones getting an extra die for their pool
+        if stat in preferredStats:
+            stats[stat] = attributeRoller(True)
+        else:
+            stats[stat] = attributeRoller()
+
+    for stat in stats: # Check to confirm all stats are within an acceptable range before returning them.
+        if stats[stat] < -3 or stats[stat] > 3:
+            sys.exit(f"\'{stat}\' with a value of {stats[stat]} is outside range of acceptable stats.")
+
+    return stats
 
 
 def weaponRoller():
