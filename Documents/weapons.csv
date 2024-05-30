@@ -8,6 +8,6 @@ Two Small SMGs|d6|True|True|Only autofire
 Shotgun|d8|False|True|
 Monosword|d8|False|False|
 Assault Rifle|d8|True|True|
-Grenade Launcher|d6|False|True|Up to d3 targets
+(Assault Rifle with) Grenade Launcher|(d8a) d6|False|True|Up to d3 targets
 Pulse Rifle|d10|True|True|
 Sniper Rifle|2d10|False|True|x3 crit damage.  When aiming for 2 rounds: -4DR and +3 damage

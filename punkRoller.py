@@ -4,7 +4,7 @@ import sys
 
 
 def main():
-    print(statsRoller())
+    weaponRoller()
 
 
 def cashAndGearRoller() -> list:
@@ -88,8 +88,22 @@ def statsRoller() -> dict:
     return stats
 
 
-def weaponRoller():
-    pass
+def weaponRoller() -> dict:
+    """
+    Function to roll out a weapon for characters & return the variables for the weapon
+    :return: dict
+    """
+    weaponList = csvReader("Documents\\weapons.csv")
+    weaponChoice = random.choice(weaponList)
+    print(weaponChoice)
+    if weaponChoice[3] == "True":
+        magCount = random.randint(1,4)
+    else:
+        magCount = 0
+    weaponChoice[3] = magCount
+
+    print(weaponChoice)
+
 
 
 def armorRoller():
