@@ -1,0 +1,13 @@
+WeaponName|Damage|Autofire|MagCount|Notes
+Broken Bottle|d3|False|False|Optionally: shiv, brick, sharpened femur
+Machete|d6|False|False|
+(TOO MANY) Throwing Knives|d4|False|False|Two attacks per round
+Ancient Revolver|d8|False|True|
+Smartgun(TM)|d6|True|True|d10a damage with SmartJack
+Two Small SMGs|d6|True|True|Only autofire
+Shotgun|d8|False|True|
+Monosword|d8|False|False|
+Assault Rifle|d8|True|True|
+Grenade Launcher|d6|False|True|Up to d3 targets
+Pulse Rifle|d10|True|True|
+Sniper Rifle|2d10|False|True|x3 crit damage.  When aiming for 2 rounds: -4DR and +3 damage
