@@ -4,7 +4,7 @@ import sys
 
 
 def main():
-    print(weaponRoller())
+    print(armorRoller())
 
 
 def cashAndGearRoller() -> list:
@@ -104,8 +104,17 @@ def weaponRoller() -> dict:
     return {"Weapon Name":weaponChoice[0],"Damage":weaponChoice[1], "Autofire": weaponChoice[2], "Magazine Count": weaponChoice[3], "Notes": weaponChoice[4]}
 
 
-def armorRoller():
-    pass
+def armorRoller(defaultDie=3) -> dict:
+    """
+    Function for randomly selecting armor from a csv file of armor types and stats.
+    :param defaultDie: sets the upper limit of die to be rolled when selecting armor
+    :type defaultDie: int
+    :return: dict
+    """
+    armorList = csvReader("Documents\\armor.csv")
+    armorNumber = random.randint(1, defaultDie)
+    armorChoice = armorList[armorNumber - 1]
+    return {"Armor Name": armorChoice[0], "Tier": armorChoice[1], "Damage Reduction": armorChoice[2], "Notes": armorChoice[3]}
 
 
 def debtRoller():
