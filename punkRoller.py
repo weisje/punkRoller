@@ -4,7 +4,7 @@ import sys
 
 
 def main():
-    print(armorRoller())
+    print(debtRoller())
 
 
 def cashAndGearRoller() -> list:
@@ -117,9 +117,24 @@ def armorRoller(defaultDie=3) -> dict:
     return {"Armor Name": armorChoice[0], "Tier": armorChoice[1], "Damage Reduction": armorChoice[2], "Notes": armorChoice[3]}
 
 
-def debtRoller():
-    pass
+def debtRoller(dieCount=3, dieFace=6, debtMultiplier=1000) -> dict:
+    """
+    Function for generating an amount of debt owed as well as who that debt is owed to
+    :param dieCount: How many die should be rolled for calculating debt
+    :type dieCount: int
+    :param dieFace: What type of die should be used for the upper limit of debt on each die rolled
+    :type dieFace: int
+    :param debtMultiplier: How much the debt roll should be multiplied by to gather debt amount.
+    :return: dict
+    """
+    debt = 0
+    debtor = ""
+    rollPool = []
+    while len(rollPool) < dieCount:
+        rollPool.append(random.randint(1, dieFace))
 
+    debt = sum(rollPool) * debtMultiplier
+    return {"debtor": debtor, "debt": debt}
 
 def cyberTechRoller():
     pass
