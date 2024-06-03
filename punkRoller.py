@@ -129,11 +129,14 @@ def debtRoller(dieCount=3, dieFace=6, debtMultiplier=1000) -> dict:
     """
     debt = 0
     debtor = ""
+    debtors = csvReader("Documents/debtors.csv")
     rollPool = []
     while len(rollPool) < dieCount:
         rollPool.append(random.randint(1, dieFace))
 
     debt = sum(rollPool) * debtMultiplier
+    debtor = random.choice(debtors)
+    debtor = debtor[0]
     return {"debtor": debtor, "debt": debt}
 
 def cyberTechRoller():
