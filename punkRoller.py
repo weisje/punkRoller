@@ -4,7 +4,7 @@ import sys
 
 
 def main():
-    print(debtRoller())
+    print(cyberTechRoller())
 
 
 def cashAndGearRoller() -> list:
@@ -139,8 +139,16 @@ def debtRoller(dieCount=3, dieFace=6, debtMultiplier=1000) -> dict:
     debtor = debtor[0]
     return {"debtor": debtor, "debt": debt}
 
-def cyberTechRoller():
-    pass
+
+def cyberTechRoller() -> dict:
+    """
+    Function to randomly select from available cybertech & return the results to caller.
+    :return: dict
+    """
+    cyberTech = csvReader("Documents/cybertech.csv")
+    cyberTechChoice = random.choice(cyberTech)
+
+    return {"Name": cyberTechChoice[0], "Description": cyberTechChoice[1], "Price": cyberTechChoice[2]}
 
 
 def appRoller():
