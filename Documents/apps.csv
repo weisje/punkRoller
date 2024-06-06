@@ -1,0 +1,13 @@
+Name|Description
+WEIAN-Hammer|Nearby devices are triggered to perform their function, i.e. open/close unlocked doors, trigger sprinklers, start a camera recording, adjust the AC.  The character can trigger 5 devices as they choose over the next 5 rounds
+RCDOvrChrgr|Ond target gets +d6 on all Agility and Strength tests for Knowledge+3 rounds
+Nok_Nok|Open a nearby locked door.  Failure may trigger an alarm
+False Flagger|Fake an alarm or the location of a triggered alarm.  Any response to a real alarm is delayed by 2d6 minutes
+SigilTag|This location and nearby systems are tagged with the character's invisible sigil, enabling them to remotely activate Apps as if they were present.  Only two locations can be tagged at the same time
+>eRase|Cut or copy the latest 10 minutes of stored information from any type of recording/surveillance device
+De-fenc/der|Take control of a nearby turret, drone, or similar defense system for d6 rounds
+Blood Snoot|Tracks down an enemy hacker and deals d4 damage each round until they pass a DR12 Knowledge test or die
+PathMapper|Uses nearby sensors, cameras, and public information to created a detailed 3D map of the surrounding ~100m
+CTechAttak|d3 nearby cybered targets lose a total of 4d10 HP
+beaconworm|Place a tracker into a device or cybertech, enabling the character to track its movements in real-time for the coming d4 weeks
+TrolleySkipper|Automated defenses have trouble tracking a person of the character's choice and prioritize other available targets
