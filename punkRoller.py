@@ -4,7 +4,7 @@ import sys
 
 
 def main():
-    print(cyberTechRoller())
+    print(appRoller())
 
 
 def cashAndGearRoller() -> list:
@@ -151,9 +151,15 @@ def cyberTechRoller() -> dict:
     return {"Name": cyberTechChoice[0], "Description": cyberTechChoice[1], "Price": cyberTechChoice[2]}
 
 
-def appRoller():
-    pass
+def appRoller() -> dict:
+    """
+    Function for randomly selecting apps and returning them to caller
+    :return: dict
+    """
+    appList = csvReader("Documents/apps.csv")
+    appChoice = random.choice(appList)
 
+    return {"Name": appChoice[0], "Description": appChoice[1]}
 
 def nanoPowerRoller():
     pass
